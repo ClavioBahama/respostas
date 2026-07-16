@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback — Ecokraft Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Ecokraft Design</span>
+    </div>
+    <p class="topbar-note">Menos de 2 minutos</p>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <p class="hero-kicker">Feedback de clientes</p>
+      <h1 class="hero-brand">Ecokraft Design</h1>
+      <p class="hero-lead">
+        A sua opinião é muito importante para nós! Queremos melhorar continuamente
+        os nossos produtos e atendimento. Este formulário leva menos de 2 minutos.
+      </p>
+      <a class="cta" href="#formulario">Começar</a>
+    </section>
+
+    <form id="formulario" class="survey" novalidate>
+      <div class="progress-wrap" aria-hidden="true">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <p class="progress-label" id="progressLabel">0% concluído</p>
+
+      <p class="section-title">Perguntas iniciais</p>
+
+      <!-- 1 -->
+      <fieldset class="block" data-step>
+        <legend>1. Qual produto ou serviço você adquiriu?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="produto" value="cartao-visita" required /><span>Cartão de visita</span></label>
+          <label class="choice"><input type="radio" name="produto" value="caneca" /><span>Caneca personalizada</span></label>
+          <label class="choice"><input type="radio" name="produto" value="agenda" /><span>Agenda personalizada</span></label>
+          <label class="choice"><input type="radio" name="produto" value="impressao" /><span>Impressão</span></label>
+          <label class="choice"><input type="radio" name="produto" value="dtf" /><span>DTF</span></label>
+          <label class="choice"><input type="radio" name="produto" value="outro" /><span>Outro</span></label>
+        </div>
+        <input type="text" name="produto_outro" class="outro-field" id="produtoOutro" placeholder="Se escolheu Outro, especifique…" hidden />
+      </fieldset>
+
+      <!-- 2 -->
+      <fieldset class="block" data-step>
+        <legend>2. Como conheceu a nossa gráfica?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="origem" value="facebook" required /><span>Facebook</span></label>
+          <label class="choice"><input type="radio" name="origem" value="instagram" /><span>Instagram</span></label>
+          <label class="choice"><input type="radio" name="origem" value="tiktok" /><span>TikTok</span></label>
+          <label class="choice"><input type="radio" name="origem" value="whatsapp" /><span>WhatsApp</span></label>
+          <label class="choice"><input type="radio" name="origem" value="indicacao" /><span>Indicação</span></label>
+          <label class="choice"><input type="radio" name="origem" value="outro" /><span>Outro</span></label>
+        </div>
+        <input type="text" name="origem_outro" class="outro-field" id="origemOutro" placeholder="Se escolheu Outro, especifique…" hidden />
+      </fieldset>
+
+      <p class="section-title">Avaliação do atendimento</p>
+
+      <!-- 3 -->
+      <fieldset class="block" data-step>
+        <legend>3. Como avalia o nosso atendimento?</legend>
+        <div class="stars" role="group" aria-label="Avaliação de 1 a 5 estrelas">
+          <label><input type="radio" name="atendimento_estrelas" value="1" required /><span>★</span></label>
+          <label><input type="radio" name="atendimento_estrelas" value="2" /><span>★</span></label>
+          <label><input type="radio" name="atendimento_estrelas" value="3" /><span>★</span></label>
+          <label><input type="radio" name="atendimento_estrelas" value="4" /><span>★</span></label>
+          <label><input type="radio" name="atendimento_estrelas" value="5" /><span>★</span></label>
+        </div>
+        <div class="scale-hints"><span>Fraco</span><span>Excelente</span></div>
+      </fieldset>
+
+      <!-- 4 -->
+      <fieldset class="block" data-step>
+        <legend>4. O nosso atendimento foi rápido?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="atendimento_rapido" value="sim" required /><span>Sim</span></label>
+          <label class="choice"><input type="radio" name="atendimento_rapido" value="mais-ou-menos" /><span>Mais ou menos</span></label>
+          <label class="choice"><input type="radio" name="atendimento_rapido" value="nao" /><span>Não</span></label>
+        </div>
+      </fieldset>
+
+      <!-- 5 -->
+      <fieldset class="block" data-step>
+        <legend>5. Sentiu que compreendemos exatamente o que você queria?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="compreensao" value="sim" required /><span>Sim</span></label>
+          <label class="choice"><input type="radio" name="compreensao" value="parcialmente" /><span>Parcialmente</span></label>
+          <label class="choice"><input type="radio" name="compreensao" value="nao" /><span>Não</span></label>
+        </div>
+      </fieldset>
+
+      <p class="section-title">Avaliação do produto</p>
+
+      <!-- 6 -->
+      <fieldset class="block" data-step>
+        <legend>6. Como avalia a qualidade do produto recebido?</legend>
+        <div class="stars" role="group" aria-label="Qualidade de 1 a 5 estrelas">
+          <label><input type="radio" name="qualidade_estrelas" value="1" required /><span>★</span></label>
+          <label><input type="radio" name="qualidade_estrelas" value="2" /><span>★</span></label>
+          <label><input type="radio" name="qualidade_estrelas" value="3" /><span>★</span></label>
+          <label><input type="radio" name="qualidade_estrelas" value="4" /><span>★</span></label>
+          <label><input type="radio" name="qualidade_estrelas" value="5" /><span>★</span></label>
+        </div>
+        <div class="scale-hints"><span>Fraca</span><span>Excelente</span></div>
+      </fieldset>
+
+      <!-- 7 -->
+      <fieldset class="block" data-step>
+        <legend>7. O produto correspondeu às suas expectativas?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="expectativas" value="superou" required /><span>Superou</span></label>
+          <label class="choice"><input type="radio" name="expectativas" value="sim" /><span>Sim</span></label>
+          <label class="choice"><input type="radio" name="expectativas" value="parcialmente" /><span>Parcialmente</span></label>
+          <label class="choice"><input type="radio" name="expectativas" value="nao" /><span>Não</span></label>
+        </div>
+      </fieldset>
+
+      <!-- 8 -->
+      <fieldset class="block" data-step>
+        <legend>8. O que mais gostou no trabalho realizado?</legend>
+        <textarea name="gostou" rows="3" placeholder="Conte-nos o que mais o impressionou…" required></textarea>
+      </fieldset>
+
+      <p class="section-title">Melhorias</p>
+
+      <!-- 9 -->
+      <fieldset class="block" data-step>
+        <legend>9. O que podemos melhorar para oferecer uma experiência ainda melhor?</legend>
+        <textarea name="melhorar" rows="3" placeholder="Sugestões, ideias ou detalhes…" required></textarea>
+      </fieldset>
+
+      <!-- 10 -->
+      <fieldset class="block" data-step>
+        <legend>10. Voltaria a comprar conosco?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="voltaria" value="com-certeza" required /><span>Com certeza</span></label>
+          <label class="choice"><input type="radio" name="voltaria" value="talvez" /><span>Talvez</span></label>
+          <label class="choice"><input type="radio" name="voltaria" value="nao" /><span>Não</span></label>
+        </div>
+      </fieldset>
+
+      <!-- 11 -->
+      <fieldset class="block" data-step>
+        <legend>11. Recomendaria a nossa gráfica para amigos ou familiares?</legend>
+        <div class="nps" role="group" aria-label="De 0 a 10">
+          <label><input type="radio" name="recomendacao" value="0" required /><span>0</span></label>
+          <label><input type="radio" name="recomendacao" value="1" /><span>1</span></label>
+          <label><input type="radio" name="recomendacao" value="2" /><span>2</span></label>
+          <label><input type="radio" name="recomendacao" value="3" /><span>3</span></label>
+          <label><input type="radio" name="recomendacao" value="4" /><span>4</span></label>
+          <label><input type="radio" name="recomendacao" value="5" /><span>5</span></label>
+          <label><input type="radio" name="recomendacao" value="6" /><span>6</span></label>
+          <label><input type="radio" name="recomendacao" value="7" /><span>7</span></label>
+          <label><input type="radio" name="recomendacao" value="8" /><span>8</span></label>
+          <label><input type="radio" name="recomendacao" value="9" /><span>9</span></label>
+          <label><input type="radio" name="recomendacao" value="10" /><span>10</span></label>
+        </div>
+        <div class="scale-hints"><span>Nada provável</span><span>Muito provável</span></div>
+      </fieldset>
+
+      <p class="section-title">Depoimento</p>
+
+      <!-- 12 -->
+      <fieldset class="block" data-step>
+        <legend>12. Pode deixar um pequeno comentário sobre a sua experiência?</legend>
+        <textarea name="depoimento" rows="4" placeholder="O seu depoimento pode ajudar outros clientes…" required></textarea>
+      </fieldset>
+
+      <!-- Extra -->
+      <fieldset class="block" data-step>
+        <legend>13. Autoriza que utilizemos o seu comentário e fotos/vídeos do produto nas nossas redes sociais?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="autorizacao" value="sim" required /><span>Sim</span></label>
+          <label class="choice"><input type="radio" name="autorizacao" value="nao" /><span>Não</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="block optional" data-step>
+        <legend>Nome <span class="hint">(opcional — útil se autorizar o depoimento)</span></legend>
+        <input type="text" name="nome" placeholder="O seu nome" />
+      </fieldset>
+
+      <div class="submit-row">
+        <button type="submit" class="cta submit" id="btnEnviar">Enviar feedback</button>
+        <p class="submit-note" id="submitHint">O feedback é enviado automaticamente — sem abrir WhatsApp nem email.</p>
+        <p class="submit-error" id="submitError" hidden></p>
+      </div>
+    </form>
+
+    <section class="thanks" id="obrigado" hidden>
+      <h2>Muito obrigado pelo seu feedback!</h2>
+      <p id="thanksMsg">
+        A sua resposta foi enviada com sucesso. Ajuda-nos a oferecer um serviço cada vez melhor. Esperamos vê-lo novamente em breve!
+      </p>
+      <div class="thanks-actions">
+        <button type="button" class="cta ghost" id="voltar">Voltar ao início</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Ecokraft Design · A sua opinião faz a diferença</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
