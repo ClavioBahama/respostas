@@ -23,7 +23,6 @@ const DESTINO = {
   const voltar = document.getElementById("voltar");
   const btnEnviar = document.getElementById("btnEnviar");
   const submitError = document.getElementById("submitError");
-  const submitHint = document.getElementById("submitHint");
   const blocks = Array.from(document.querySelectorAll("[data-step]"));
   const TOTAL_PERGUNTAS = 13;
 
@@ -66,12 +65,6 @@ const DESTINO = {
     "com-certeza": "Com certeza",
     talvez: "Talvez",
   };
-
-  if (location.protocol === "file:") {
-    submitHint.textContent =
-      "Atenção: abra com o ficheiro abrir-formulario.bat. Se abrir o HTML direto, o envio NÃO funciona.";
-    submitHint.classList.add("warn");
-  }
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -207,9 +200,7 @@ const DESTINO = {
 
   async function enviarEmail(payload) {
     if (location.protocol === "file:") {
-      throw new Error(
-        "O formulário está aberto como ficheiro. Feche esta janela e use o ficheiro abrir-formulario.bat"
-      );
+      throw new Error("SEND_BLOCKED_FILE");
     }
 
     const campos = formatarParaEmail(payload);
@@ -232,19 +223,15 @@ const DESTINO = {
     const msg = String(result.message || "");
 
     if (msg.toLowerCase().includes("activation") || msg.toLowerCase().includes("activate")) {
-      throw new Error(
-        "Ativação necessária: abra o iCloud Mail (claviochitsulete@icloud.com), procure o email do FormSubmit e clique em Activate Form. Veja também a pasta Spam."
-      );
+      throw new Error("NEEDS_ACTIVATION");
     }
 
     if (msg.toLowerCase().includes("web server") || msg.toLowerCase().includes("html files")) {
-      throw new Error(
-        "Use o ficheiro abrir-formulario.bat para abrir o formulário num servidor local."
-      );
+      throw new Error("SEND_BLOCKED_FILE");
     }
 
     if (!response.ok || result.success === "false" || result.success === false) {
-      throw new Error(msg || "Falha ao enviar para o email.");
+      throw new Error("SEND_FAILED");
     }
 
     return result;
@@ -299,7 +286,7 @@ const DESTINO = {
       mostrarObrigado();
     } catch (err) {
       console.error(err);
-      mostrarErro(err.message || "Não foi possível enviar. Tente novamente.");
+      mostrarErro("Não foi possível enviar agora. Por favor, tente novamente dentro de momentos.");
     } finally {
       setLoading(false);
     }
