@@ -12,201 +12,195 @@
 <body>
   <div class="bg-atmosphere" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">Ecokraft Design</span>
-    </div>
-    <p class="topbar-note">Menos de 2 minutos</p>
+  <header class="site-header">
+    <img src="logo-ecokraft.png" alt="Ecokraft Design" class="brand-logo" width="320" height="110" />
   </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <p class="hero-kicker">Feedback de clientes</p>
-      <h1 class="hero-brand">Ecokraft Design</h1>
-      <p class="hero-lead">
-        A sua opinião é muito importante para nós! Queremos melhorar continuamente
-        os nossos produtos e atendimento. Este formulário leva menos de 2 minutos.
+  <main class="page">
+    <section class="intro" id="inicio">
+      <span class="intro-badge">Feedback de clientes</span>
+      <h1 class="intro-title">A sua opinião importa</h1>
+      <p class="intro-text">
+        Queremos melhorar continuamente os nossos produtos e atendimento.
+        Este formulário leva menos de 2 minutos.
       </p>
-      <a class="cta" href="#formulario">Começar</a>
+      <a class="btn btn-primary" href="#formulario">Começar questionário</a>
     </section>
 
-    <form id="formulario" class="survey" novalidate>
-      <div class="progress-wrap" aria-hidden="true">
-        <div class="progress-bar" id="progressBar"></div>
+    <form id="formulario" class="form" novalidate>
+      <div class="form-progress">
+        <div class="form-progress__track" aria-hidden="true">
+          <div class="form-progress__bar" id="progressBar"></div>
+        </div>
+        <p class="form-progress__label" id="progressLabel">0% concluído</p>
       </div>
-      <p class="progress-label" id="progressLabel">0% concluído</p>
 
-      <p class="section-title">Perguntas iniciais</p>
+      <div class="form-section">
+        <h2 class="form-section__title">Perguntas iniciais</h2>
 
-      <!-- 1 -->
-      <fieldset class="block" data-step>
-        <legend>1. Qual produto ou serviço você adquiriu?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="produto" value="cartao-visita" required /><span>Cartão de visita</span></label>
-          <label class="choice"><input type="radio" name="produto" value="caneca" /><span>Caneca personalizada</span></label>
-          <label class="choice"><input type="radio" name="produto" value="agenda" /><span>Agenda personalizada</span></label>
-          <label class="choice"><input type="radio" name="produto" value="impressao" /><span>Impressão</span></label>
-          <label class="choice"><input type="radio" name="produto" value="dtf" /><span>DTF</span></label>
-          <label class="choice"><input type="radio" name="produto" value="outro" /><span>Outro</span></label>
-        </div>
-        <input type="text" name="produto_outro" class="outro-field" id="produtoOutro" placeholder="Se escolheu Outro, especifique…" hidden />
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>1. Qual produto ou serviço você adquiriu?</legend>
+          <div class="choices choices-grid">
+            <label class="choice"><input type="radio" name="produto" value="cartao-visita" required /><span>Cartão de visita</span></label>
+            <label class="choice"><input type="radio" name="produto" value="caneca" /><span>Caneca personalizada</span></label>
+            <label class="choice"><input type="radio" name="produto" value="agenda" /><span>Agenda personalizada</span></label>
+            <label class="choice"><input type="radio" name="produto" value="impressao" /><span>Impressão</span></label>
+            <label class="choice"><input type="radio" name="produto" value="dtf" /><span>DTF</span></label>
+            <label class="choice"><input type="radio" name="produto" value="outro" /><span>Outro</span></label>
+          </div>
+          <input type="text" name="produto_outro" class="field-outro" id="produtoOutro" placeholder="Se escolheu Outro, especifique…" hidden />
+        </fieldset>
 
-      <!-- 2 -->
-      <fieldset class="block" data-step>
-        <legend>2. Como conheceu a nossa gráfica?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="origem" value="facebook" required /><span>Facebook</span></label>
-          <label class="choice"><input type="radio" name="origem" value="instagram" /><span>Instagram</span></label>
-          <label class="choice"><input type="radio" name="origem" value="tiktok" /><span>TikTok</span></label>
-          <label class="choice"><input type="radio" name="origem" value="whatsapp" /><span>WhatsApp</span></label>
-          <label class="choice"><input type="radio" name="origem" value="indicacao" /><span>Indicação</span></label>
-          <label class="choice"><input type="radio" name="origem" value="outro" /><span>Outro</span></label>
-        </div>
-        <input type="text" name="origem_outro" class="outro-field" id="origemOutro" placeholder="Se escolheu Outro, especifique…" hidden />
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>2. Como conheceu a nossa gráfica?</legend>
+          <div class="choices choices-grid">
+            <label class="choice"><input type="radio" name="origem" value="facebook" required /><span>Facebook</span></label>
+            <label class="choice"><input type="radio" name="origem" value="instagram" /><span>Instagram</span></label>
+            <label class="choice"><input type="radio" name="origem" value="tiktok" /><span>TikTok</span></label>
+            <label class="choice"><input type="radio" name="origem" value="whatsapp" /><span>WhatsApp</span></label>
+            <label class="choice"><input type="radio" name="origem" value="indicacao" /><span>Indicação</span></label>
+            <label class="choice"><input type="radio" name="origem" value="outro" /><span>Outro</span></label>
+          </div>
+          <input type="text" name="origem_outro" class="field-outro" id="origemOutro" placeholder="Se escolheu Outro, especifique…" hidden />
+        </fieldset>
+      </div>
 
-      <p class="section-title">Avaliação do atendimento</p>
+      <div class="form-section">
+        <h2 class="form-section__title">Avaliação do atendimento</h2>
 
-      <!-- 3 -->
-      <fieldset class="block" data-step>
-        <legend>3. Como avalia o nosso atendimento?</legend>
-        <div class="stars" role="group" aria-label="Avaliação de 1 a 5 estrelas">
-          <label><input type="radio" name="atendimento_estrelas" value="1" required /><span>★</span></label>
-          <label><input type="radio" name="atendimento_estrelas" value="2" /><span>★</span></label>
-          <label><input type="radio" name="atendimento_estrelas" value="3" /><span>★</span></label>
-          <label><input type="radio" name="atendimento_estrelas" value="4" /><span>★</span></label>
-          <label><input type="radio" name="atendimento_estrelas" value="5" /><span>★</span></label>
-        </div>
-        <div class="scale-hints"><span>Fraco</span><span>Excelente</span></div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>3. Como avalia o nosso atendimento?</legend>
+          <div class="stars" role="group" aria-label="Avaliação de 1 a 5 estrelas">
+            <label><input type="radio" name="atendimento_estrelas" value="1" required /><span>★</span></label>
+            <label><input type="radio" name="atendimento_estrelas" value="2" /><span>★</span></label>
+            <label><input type="radio" name="atendimento_estrelas" value="3" /><span>★</span></label>
+            <label><input type="radio" name="atendimento_estrelas" value="4" /><span>★</span></label>
+            <label><input type="radio" name="atendimento_estrelas" value="5" /><span>★</span></label>
+          </div>
+          <div class="scale-hints"><span>Fraco</span><span>Excelente</span></div>
+        </fieldset>
 
-      <!-- 4 -->
-      <fieldset class="block" data-step>
-        <legend>4. O nosso atendimento foi rápido?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="atendimento_rapido" value="sim" required /><span>Sim</span></label>
-          <label class="choice"><input type="radio" name="atendimento_rapido" value="mais-ou-menos" /><span>Mais ou menos</span></label>
-          <label class="choice"><input type="radio" name="atendimento_rapido" value="nao" /><span>Não</span></label>
-        </div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>4. O nosso atendimento foi rápido?</legend>
+          <div class="choices choices-inline">
+            <label class="choice"><input type="radio" name="atendimento_rapido" value="sim" required /><span>Sim</span></label>
+            <label class="choice"><input type="radio" name="atendimento_rapido" value="mais-ou-menos" /><span>Mais ou menos</span></label>
+            <label class="choice"><input type="radio" name="atendimento_rapido" value="nao" /><span>Não</span></label>
+          </div>
+        </fieldset>
 
-      <!-- 5 -->
-      <fieldset class="block" data-step>
-        <legend>5. Sentiu que compreendemos exatamente o que você queria?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="compreensao" value="sim" required /><span>Sim</span></label>
-          <label class="choice"><input type="radio" name="compreensao" value="parcialmente" /><span>Parcialmente</span></label>
-          <label class="choice"><input type="radio" name="compreensao" value="nao" /><span>Não</span></label>
-        </div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>5. Sentiu que compreendemos exatamente o que você queria?</legend>
+          <div class="choices choices-inline">
+            <label class="choice"><input type="radio" name="compreensao" value="sim" required /><span>Sim</span></label>
+            <label class="choice"><input type="radio" name="compreensao" value="parcialmente" /><span>Parcialmente</span></label>
+            <label class="choice"><input type="radio" name="compreensao" value="nao" /><span>Não</span></label>
+          </div>
+        </fieldset>
+      </div>
 
-      <p class="section-title">Avaliação do produto</p>
+      <div class="form-section">
+        <h2 class="form-section__title">Avaliação do produto</h2>
 
-      <!-- 6 -->
-      <fieldset class="block" data-step>
-        <legend>6. Como avalia a qualidade do produto recebido?</legend>
-        <div class="stars" role="group" aria-label="Qualidade de 1 a 5 estrelas">
-          <label><input type="radio" name="qualidade_estrelas" value="1" required /><span>★</span></label>
-          <label><input type="radio" name="qualidade_estrelas" value="2" /><span>★</span></label>
-          <label><input type="radio" name="qualidade_estrelas" value="3" /><span>★</span></label>
-          <label><input type="radio" name="qualidade_estrelas" value="4" /><span>★</span></label>
-          <label><input type="radio" name="qualidade_estrelas" value="5" /><span>★</span></label>
-        </div>
-        <div class="scale-hints"><span>Fraca</span><span>Excelente</span></div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>6. Como avalia a qualidade do produto recebido?</legend>
+          <div class="stars" role="group" aria-label="Qualidade de 1 a 5 estrelas">
+            <label><input type="radio" name="qualidade_estrelas" value="1" required /><span>★</span></label>
+            <label><input type="radio" name="qualidade_estrelas" value="2" /><span>★</span></label>
+            <label><input type="radio" name="qualidade_estrelas" value="3" /><span>★</span></label>
+            <label><input type="radio" name="qualidade_estrelas" value="4" /><span>★</span></label>
+            <label><input type="radio" name="qualidade_estrelas" value="5" /><span>★</span></label>
+          </div>
+          <div class="scale-hints"><span>Fraca</span><span>Excelente</span></div>
+        </fieldset>
 
-      <!-- 7 -->
-      <fieldset class="block" data-step>
-        <legend>7. O produto correspondeu às suas expectativas?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="expectativas" value="superou" required /><span>Superou</span></label>
-          <label class="choice"><input type="radio" name="expectativas" value="sim" /><span>Sim</span></label>
-          <label class="choice"><input type="radio" name="expectativas" value="parcialmente" /><span>Parcialmente</span></label>
-          <label class="choice"><input type="radio" name="expectativas" value="nao" /><span>Não</span></label>
-        </div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>7. O produto correspondeu às suas expectativas?</legend>
+          <div class="choices choices-inline">
+            <label class="choice"><input type="radio" name="expectativas" value="superou" required /><span>Superou</span></label>
+            <label class="choice"><input type="radio" name="expectativas" value="sim" /><span>Sim</span></label>
+            <label class="choice"><input type="radio" name="expectativas" value="parcialmente" /><span>Parcialmente</span></label>
+            <label class="choice"><input type="radio" name="expectativas" value="nao" /><span>Não</span></label>
+          </div>
+        </fieldset>
 
-      <!-- 8 -->
-      <fieldset class="block" data-step>
-        <legend>8. O que mais gostou no trabalho realizado?</legend>
-        <textarea name="gostou" rows="3" placeholder="Conte-nos o que mais o impressionou…" required></textarea>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>8. O que mais gostou no trabalho realizado?</legend>
+          <textarea name="gostou" rows="3" placeholder="Conte-nos o que mais o impressionou…" required></textarea>
+        </fieldset>
+      </div>
 
-      <p class="section-title">Melhorias</p>
+      <div class="form-section">
+        <h2 class="form-section__title">Melhorias</h2>
 
-      <!-- 9 -->
-      <fieldset class="block" data-step>
-        <legend>9. O que podemos melhorar para oferecer uma experiência ainda melhor?</legend>
-        <textarea name="melhorar" rows="3" placeholder="Sugestões, ideias ou detalhes…" required></textarea>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>9. O que podemos melhorar para oferecer uma experiência ainda melhor?</legend>
+          <textarea name="melhorar" rows="3" placeholder="Sugestões, ideias ou detalhes…" required></textarea>
+        </fieldset>
 
-      <!-- 10 -->
-      <fieldset class="block" data-step>
-        <legend>10. Voltaria a comprar conosco?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="voltaria" value="com-certeza" required /><span>Com certeza</span></label>
-          <label class="choice"><input type="radio" name="voltaria" value="talvez" /><span>Talvez</span></label>
-          <label class="choice"><input type="radio" name="voltaria" value="nao" /><span>Não</span></label>
-        </div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>10. Voltaria a comprar conosco?</legend>
+          <div class="choices choices-inline">
+            <label class="choice"><input type="radio" name="voltaria" value="com-certeza" required /><span>Com certeza</span></label>
+            <label class="choice"><input type="radio" name="voltaria" value="talvez" /><span>Talvez</span></label>
+            <label class="choice"><input type="radio" name="voltaria" value="nao" /><span>Não</span></label>
+          </div>
+        </fieldset>
 
-      <!-- 11 -->
-      <fieldset class="block" data-step>
-        <legend>11. Recomendaria a nossa gráfica para amigos ou familiares?</legend>
-        <div class="nps" role="group" aria-label="De 0 a 10">
-          <label><input type="radio" name="recomendacao" value="0" required /><span>0</span></label>
-          <label><input type="radio" name="recomendacao" value="1" /><span>1</span></label>
-          <label><input type="radio" name="recomendacao" value="2" /><span>2</span></label>
-          <label><input type="radio" name="recomendacao" value="3" /><span>3</span></label>
-          <label><input type="radio" name="recomendacao" value="4" /><span>4</span></label>
-          <label><input type="radio" name="recomendacao" value="5" /><span>5</span></label>
-          <label><input type="radio" name="recomendacao" value="6" /><span>6</span></label>
-          <label><input type="radio" name="recomendacao" value="7" /><span>7</span></label>
-          <label><input type="radio" name="recomendacao" value="8" /><span>8</span></label>
-          <label><input type="radio" name="recomendacao" value="9" /><span>9</span></label>
-          <label><input type="radio" name="recomendacao" value="10" /><span>10</span></label>
-        </div>
-        <div class="scale-hints"><span>Nada provável</span><span>Muito provável</span></div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>11. Recomendaria a nossa gráfica para amigos ou familiares?</legend>
+          <div class="nps" role="group" aria-label="De 0 a 10">
+            <label><input type="radio" name="recomendacao" value="0" required /><span>0</span></label>
+            <label><input type="radio" name="recomendacao" value="1" /><span>1</span></label>
+            <label><input type="radio" name="recomendacao" value="2" /><span>2</span></label>
+            <label><input type="radio" name="recomendacao" value="3" /><span>3</span></label>
+            <label><input type="radio" name="recomendacao" value="4" /><span>4</span></label>
+            <label><input type="radio" name="recomendacao" value="5" /><span>5</span></label>
+            <label><input type="radio" name="recomendacao" value="6" /><span>6</span></label>
+            <label><input type="radio" name="recomendacao" value="7" /><span>7</span></label>
+            <label><input type="radio" name="recomendacao" value="8" /><span>8</span></label>
+            <label><input type="radio" name="recomendacao" value="9" /><span>9</span></label>
+            <label><input type="radio" name="recomendacao" value="10" /><span>10</span></label>
+          </div>
+          <div class="scale-hints"><span>Nada provável</span><span>Muito provável</span></div>
+        </fieldset>
+      </div>
 
-      <p class="section-title">Depoimento</p>
+      <div class="form-section">
+        <h2 class="form-section__title">Depoimento</h2>
 
-      <!-- 12 -->
-      <fieldset class="block" data-step>
-        <legend>12. Pode deixar um pequeno comentário sobre a sua experiência?</legend>
-        <textarea name="depoimento" rows="4" placeholder="O seu depoimento pode ajudar outros clientes…" required></textarea>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>12. Pode deixar um pequeno comentário sobre a sua experiência?</legend>
+          <textarea name="depoimento" rows="4" placeholder="O seu depoimento pode ajudar outros clientes…" required></textarea>
+        </fieldset>
 
-      <!-- Extra -->
-      <fieldset class="block" data-step>
-        <legend>13. Autoriza que utilizemos o seu comentário e fotos/vídeos do produto nas nossas redes sociais?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="autorizacao" value="sim" required /><span>Sim</span></label>
-          <label class="choice"><input type="radio" name="autorizacao" value="nao" /><span>Não</span></label>
-        </div>
-      </fieldset>
+        <fieldset class="question" data-step>
+          <legend>13. Autoriza que utilizemos o seu comentário e fotos/vídeos do produto nas nossas redes sociais?</legend>
+          <div class="choices choices-inline">
+            <label class="choice"><input type="radio" name="autorizacao" value="sim" required /><span>Sim</span></label>
+            <label class="choice"><input type="radio" name="autorizacao" value="nao" /><span>Não</span></label>
+          </div>
+        </fieldset>
 
-      <fieldset class="block optional" data-step>
-        <legend>Nome <span class="hint">(opcional — útil se autorizar o depoimento)</span></legend>
-        <input type="text" name="nome" placeholder="O seu nome" />
-      </fieldset>
+        <fieldset class="question question-optional" data-step>
+          <legend>Nome <span class="hint">(opcional)</span></legend>
+          <input type="text" name="nome" placeholder="O seu nome" />
+        </fieldset>
+      </div>
 
-      <div class="submit-row">
-        <button type="submit" class="cta submit" id="btnEnviar">Enviar feedback</button>
-        <p class="submit-error" id="submitError" hidden></p>
+      <div class="form-submit">
+        <button type="submit" class="btn btn-primary btn-full" id="btnEnviar">Enviar feedback</button>
+        <p class="form-error" id="submitError" hidden></p>
       </div>
     </form>
 
     <section class="thanks" id="obrigado" hidden>
-      <h2>Muito obrigado pelo seu feedback!</h2>
+      <div class="thanks-icon" aria-hidden="true">✓</div>
+      <h2>Muito obrigado!</h2>
       <p id="thanksMsg">
         A sua resposta ajuda-nos a oferecer um serviço cada vez melhor. Esperamos vê-lo novamente em breve!
       </p>
-      <div class="thanks-actions">
-        <button type="button" class="cta ghost" id="voltar">Voltar ao início</button>
-      </div>
+      <button type="button" class="btn btn-outline" id="voltar">Voltar ao início</button>
     </section>
   </main>
 

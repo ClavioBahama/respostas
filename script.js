@@ -2,17 +2,17 @@
  * ============================================================
  *  ENVIO AUTOMÁTICO — Ecokraft Design
  * ============================================================
- *  Usa FormSubmit API → claviochitsulete@icloud.com
+ *  Usa FormSubmit API → leliochemane35kd@gmail.com
  *
  *  IMPORTANTE:
  *  1) NÃO abra o index.html com duplo clique.
  *     Use o ficheiro "abrir-formulario.bat" (liga um servidor local).
- *  2) Na 1.ª vez, abra o iCloud Mail e clique em "Activate Form"
+ *  2) Na 1.ª vez, abra o Gmail e clique em "Activate Form"
  *     no email do FormSubmit (veja também Spam / Lixo).
  * ============================================================
  */
 const DESTINO = {
-  email: "claviochitsulete@icloud.com",
+  email: "leliochemane35kd@gmail.com",
 };
 
 (function () {
@@ -266,7 +266,7 @@ const DESTINO = {
       form.reportValidity();
       const firstInvalid = form.querySelector(":invalid");
       if (firstInvalid) {
-        firstInvalid.closest(".block")?.scrollIntoView({ behavior: "smooth", block: "center" });
+        firstInvalid.closest(".question")?.scrollIntoView({ behavior: "smooth", block: "center" });
       }
       return false;
     }
