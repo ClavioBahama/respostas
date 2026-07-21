@@ -242,9 +242,9 @@ const DESTINO = {
     btnEnviar.textContent = loading ? "A enviar…" : "Enviar feedback";
   }
 
-  function mostrarErro(msg) {
+  function mostrarErro(msg, detalhe) {
     submitError.hidden = false;
-    submitError.textContent = msg;
+    submitError.innerHTML = msg + (detalhe ? `<br><small>${detalhe}</small>` : "");
   }
 
   function limparErro() {
@@ -262,11 +262,19 @@ const DESTINO = {
     toggleOutro("produto", "produtoOutro");
     toggleOutro("origem", "origemOutro");
 
+    document.querySelectorAll(".question-invalid").forEach((el) => {
+      el.classList.remove("question-invalid");
+    });
+
     if (!form.checkValidity()) {
       form.reportValidity();
       const firstInvalid = form.querySelector(":invalid");
       if (firstInvalid) {
-        firstInvalid.closest(".question")?.scrollIntoView({ behavior: "smooth", block: "center" });
+        const q = firstInvalid.closest(".question");
+        if (q) {
+          q.classList.add("question-invalid");
+          q.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
       }
       return false;
     }
@@ -286,7 +294,28 @@ const DESTINO = {
       mostrarObrigado();
     } catch (err) {
       console.error(err);
-      mostrarErro("Não foi possível enviar agora. Por favor, tente novamente dentro de momentos.");
+      const code = err.message;
+      if (code === "SEND_BLOCKED_FILE") {
+        mostrarErro(
+          "Não é possível enviar porque o formulário foi aberto diretamente.",
+          "Use o ficheiro <b>abrir-formulario.bat</b> para iniciar o servidor local antes de enviar."
+        );
+      } else if (code === "NEEDS_ACTIVATION") {
+        mostrarErro(
+          "O serviço de envio ainda não está ativado.",
+          "Abra o e-mail em <b>leliochemane35kd@gmail.com</b> e clique em <b>Activate Form</b>. Depois tente novamente."
+        );
+      } else if (code === "SEND_FAILED") {
+        mostrarErro(
+          "O envio falhou. Verifique a sua ligação à Internet e tente novamente.",
+          "Se o problema persistir, contacte-nos diretamente por WhatsApp."
+        );
+      } else {
+        mostrarErro(
+          "Não foi possível enviar agora. Por favor, tente novamente dentro de momentos.",
+          "Verifique a sua ligação à Internet."
+        );
+      }
     } finally {
       setLoading(false);
     }

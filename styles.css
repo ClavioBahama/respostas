@@ -458,6 +458,23 @@ textarea::placeholder {
   border-radius: var(--radius);
 }
 
+.form-error small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.question:invalid > legend {
+  color: var(--red);
+}
+
+.question-invalid {
+  outline: 1.5px solid rgba(230, 0, 0, 0.5);
+  outline-offset: 4px;
+  border-radius: var(--radius);
+}
+
 /* ── Thanks ── */
 .thanks {
   padding: 3rem 1.5rem;
